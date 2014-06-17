@@ -31,37 +31,45 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="%E7%B9%81%E6%98%9F%E5%89%8D%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E-fxtpl" class="anchor" href="#%E7%B9%81%E6%98%9F%E5%89%8D%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E-fxtpl"><span class="octicon octicon-link"></span></a>繁星前端模板引擎 Fxtpl</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>极速，简洁，高效，轻量级，直接在html中嵌入模板</p>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="fxtpl%E7%9A%84%E7%89%B9%E7%82%B9" class="anchor" href="#fxtpl%E7%9A%84%E7%89%B9%E7%82%B9"><span class="octicon octicon-link"></span></a>Fxtpl的特点</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Fxtpl可以直接在html中嵌入模板，无需编写script标签模板再innerHTML插入等繁琐操作。</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<p>Fxtpl语法模仿Smarty，却比Smarty更简单优雅，更适合前端思维。</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Fxtpl有类似Smarty的单页面数据共享模式，也有前端模板特有的闭包数据渲染模式。</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Fxtpl有自己的模板变量域名空间（类似PHP中的美元变量），无需依靠沙箱，模板环境和外部JS环境可以安全互访，自由度和灵活性空前（市面流行的前端模板一般是沙箱牢房模式，应用灵活性大打折扣）。</p>
 
 <h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a name="fxtpl%E7%9A%84%E6%80%A7%E8%83%BD" class="anchor" href="#fxtpl%E7%9A%84%E6%80%A7%E8%83%BD"><span class="octicon octicon-link"></span></a>Fxtpl的性能</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>站在 tmpl 与 artTemplate 的肩膀上，Fxtpl 的性能更加优越。</p>
+
+<p>Fxtpl 在 Chrome 中的综合速度是 Mustache 的30多倍，在 IE8 中是 Mustache 的40多倍。</p>
+
+<p>性能对比测试&gt;&gt;</p>
+
+<h3>
+<a name="fxtpl%E7%9A%84%E4%BD%93%E7%A7%AF" class="anchor" href="#fxtpl%E7%9A%84%E4%BD%93%E7%A7%AF"><span class="octicon octicon-link"></span></a>Fxtpl的体积</h3>
+
+<p>100多行代码，1.6KB（gzip），只有 Mustache 一半左右大小。</p>
+
+<h3>
+<a name="fxtpl%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD" class="anchor" href="#fxtpl%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="octicon octicon-link"></span></a>Fxtpl的基本功能</h3>
+
+<p>渲染、编译、模板缓存、数据缓存、HTML转义、自定义分隔符、调试模式、变量调节器（helpers）、include语句等。</p>
+
+<h3>
+<a name="%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81" class="anchor" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81"><span class="octicon octicon-link"></span></a>浏览器支持</h3>
+
+<p>IE6+/Chrome/Firefox等现代浏览器</p>
       </section>
     </div>
 
