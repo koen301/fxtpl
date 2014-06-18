@@ -2,7 +2,7 @@
  * fxtpl.js - fast & sex template engine with JavaScript
  * https://github.com/koen301/fxtpl
  *
- * Copyright 2014 fanxing.com
+ * Copyright 2014, fanxing.com
  * Released under the MIT license
  * Version: 1.0.0
  * 
@@ -156,7 +156,7 @@
       return eMsg;
     },
     cache : {},//模板函数缓存
-    data : {},//模板全局数据
+    data : {},//模板全局数据缓存
     config: {//模板全局配置
       leftTag : '<!--[',//语法左分隔符
       rightTag : ']-->',//语法左右隔符
