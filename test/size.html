@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<script src="js/highcharts.js"></script>
+<title>前端模板引擎体积对比</title>
+<style>
+body{ font: 14px/20px Microsoft YaHei, \5b8b\4f53, Arial, Verdana;}
+body *{ font-family: Arial, Verdana;}
+textarea{ width: 800px; height: 50px; padding: 10px; background: #f1f1f1; border-color: #ddd; font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal; line-height: 20px; color: #333;}
+h1{ font-size: 30px; text-align: center;}
+h4{ font-size: 20px; font-weight: bold; background: #f1f1f1; padding: 5px;}
+.b{font-weight: bold;}
+.main{ width: 1000px; margin: 0 auto;}
+</style>
+</head>
+
+<body>
+<div class="main">
+    <h1>前端模板引擎体积对比</h1>
+    <h4>UglifyJS 压缩</h4>
+    <p>(kissy模板还包括所依赖的kissy库)</p>
+    <p class="test_log"></p>
+    <div id="chart_box0"></div>
+</div>
+</body>
+
+<script>
+//测试器
+var testList = [
+    {
+        name: 'fxtpl',
+        size: 2.74
+    },
+    {
+        name: 'artTemplate',
+        size: 5.19
+    },
+    {
+        name: 'baiduTemplate',
+        size: 2.98
+    },
+    {
+        name: 'tmpl',
+        size: 0.45
+    },
+    {
+        name: 'juicer',
+        size: 7.48
+    },
+    {
+        name: 'Mustache',
+        size: 4.51
+    },
+    {
+        name: 'kissy',
+        size: 44.8
+    }
+];
+function tplTester(){
+    highchartsLog.testType = 'UglifyJS 压缩 [单文件，无注释]';
+    highchartsLog('chart_box0');
+    for(var i = 0; i < testList.length; i++){
+        chart.series[0].addPoint({
+            y: testList[i].size
+        });
+    }
+}
+tplTester();
+function highchartsLog(box){
+    //var colors = Highcharts.getOptions().colors;
+    var categories = [];
+
+    for (var i = 0; i < testList.length; i ++) {
+        categories.push(testList[i].name.split(' ')[0]);
+    }
+
+    window.chart = new Highcharts.Chart({
+        chart: {
+            renderTo: box,
+            height: categories.length * 40,
+            type: 'bar'
+        },
+
+        title: {
+            text: 'JavaScript 体积对比'
+        },
+
+        subtitle: {
+            text: highchartsLog.testType
+        },
+                
+        xAxis: {
+            categories: categories,
+            labels: {
+                align: 'right',
+                style: {
+                    fontSize: '12px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+
+        yAxis: {
+            min: 0,
+            title: {
+                text: '体积(KB)'
+            }
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        tooltip: {
+            formatter: function() {
+                return '<b>'+ this.x +'</b><br/>'+
+                    this.y + 'KB';
+            }
+
+        },
+
+        credits: {
+            enabled: false
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true,
+                    formatter: function () {
+                        return this.y + 'KB';
+                    }
+                }
+            }
+        },
+        series: [{
+            data : []
+        }]
+
+    });
+}
+</script>
+</html>
