@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/fxtpl.js"></script>
+
+<title>Fxtpl</title>
+<style>
+
+</style>
+</head>
+
+<body>
+>> 引入id为“msgContent”的子模板，并用data渲染（可省）
+<div id="box">
+	<p>您好，收到新消息： </p>
+	<!--[include 'msgContent', data]-->
+</div>
+
+>> 子模板内容
+<script id="msgContent" type="text/fxtpl">
+	<p>时间：<!--[$date]--></p>
+	<p>发送者：<!--[$sender]--></p>
+	<p>内容：<!--[$content]--></p>
+</script>
+
+<script>
+var data = {
+	date: '2014/06/20',
+	sender: 'Jack',
+	content: 'Hello, my friend'
+};
+Fxtpl.render('box', data);
+</script>
+</body>
+</html>
