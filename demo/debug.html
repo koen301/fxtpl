@@ -34,6 +34,7 @@
 	<div>评论：<!--[$.trim($comment)]--></div>
 </div>
 
+<p>提示：请打开控制台</p>
 <script>
 var data = {
     starName: '邓紫棋',
@@ -46,7 +47,7 @@ var data = {
     status: 1,
     comment: ' 太精彩啦！     '
 };
-Fxtpl.render('myTemplate', data);
+Fxtpl.render('myTemplate', data, {debug: true});
 </script>
 </body>
 </html>

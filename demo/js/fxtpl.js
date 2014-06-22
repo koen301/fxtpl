@@ -34,7 +34,7 @@
         }
         return html;
       }else{
-        hasConsole && console.warn('Fxtpl Can not find \''+ id +'\'');
+        hasConsole && console.warn('Fxtpl cannot find \''+ id +'\'');
       }
     },
     compile : function(str, data, options){//编译字符串
@@ -48,7 +48,7 @@
       if(/</.test(_left)){
         var _l = _left.replace('<','&lt;');
         var _r = _right.replace('>','&gt;');
-        str = str.replace(_l, _left).replace(_r, _right);
+        str = str.split(_l).join(_left).split(_r).join(_right);
       }
       var escape = o.escape || this.config.escape;
       var varString = [];
@@ -123,7 +123,7 @@
         str = 'Fxtpl.helpers.' + fnName + '(' + str + args + ')';
       }
       return str;
-  },
+    },
     escape : function(str){//HTML转义
       return str
           .replace(/&/g,'&amp;')

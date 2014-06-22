@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/fxtpl.js"></script>
+
+<title>Fxtpl</title>
+<style>
+body{ line-height: 1.5em;}
+</style>
+</head>
+
+<body>
+>> 定义新的左/右分隔符
+<div id="myTemplate">
+    
+</div>
+<script>
+Fxtpl.config.leftTag = '{{';//定义新的左分隔符
+Fxtpl.config.rightTag = '}}';//定义新的右分隔符
+
+var data = {
+  name: "Joe"
+};
+var output = Fxtpl.compile("My name is {{$name}}", data);//直接使用新的格式
+
+document.getElementById('myTemplate').innerHTML = output;
+</script>
+</body>
+</html>

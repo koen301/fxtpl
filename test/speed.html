@@ -49,9 +49,9 @@ h4{ font-size: 20px; font-weight: bold; background: #f1f1f1; padding: 5px;}
 <!-- fxtpl 的模板 -->
 <script id="fxtpl" type="text/tmpl">
 <ul>
-    <!--[each $list as $data $index]-->
-        <li><!--[$data.index]-->. 用户: <!--[$data.user]-->/ 网站：<!--[$data.site]--></li>
-    <!--[/each]-->
+    {{each $list as $data $index}}
+        <li>{{$data.index}}. 用户: {{$data.user}}/ 网站：{{$data.site}}</li>
+    {{/each}}
 </ul>
 </script>
 <!-- artTemplate 的模板 -->
@@ -122,10 +122,13 @@ for (var i = 0; i < length; i ++) {
         site: 'http://fanxing.kugou.com/'
     }); 
 };
+//Fxtpl分隔符改为“{{}}”格式
+Fxtpl.config.leftTag = '{{';
+Fxtpl.config.rightTag = '}}';
 //测试器
 var testList0 = [
     {
-        name: 'fxtpl 编译+渲染',
+        name: 'Fxtpl 编译+渲染',
         tester: function () {
             var source = document.getElementById('fxtpl').innerHTML;
             for (var i = 0; i < number; i ++) {
@@ -207,7 +210,7 @@ var testList0 = [
 //编译 测试器
 var testList1 = [
     {
-        name: 'fxtpl 编译',
+        name: 'Fxtpl 编译',
         tester: function () {
             var source = document.getElementById('fxtpl').innerHTML;
             for (var i = 0; i < number; i ++) {
@@ -289,7 +292,7 @@ var testList1 = [
 //渲染 测试器
 var testList2 = [
     {
-        name: 'fxtpl 渲染',
+        name: 'Fxtpl 渲染',
         tester: function () {
             var source = document.getElementById('fxtpl').innerHTML;
             var fn = Fxtpl.compile(source);

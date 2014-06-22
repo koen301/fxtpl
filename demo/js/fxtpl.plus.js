@@ -59,7 +59,7 @@
       if(/</.test(_left)){
         var _l = _left.replace('<','&lt;');
         var _r = _right.replace('>','&gt;');
-        str = str.replace(_l, _left).replace(_r, _right);
+        str = str.split(_l).join(_left).split(_r).join(_right);
       }
       var escape = o.escape || this.config.escape;
       var varString = [];

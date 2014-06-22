@@ -2,36 +2,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="js/jquery.min.js"></script>
-<script src="js/highcharts.js"></script>
-<script src="js/arttpl.js"></script>
-<script src="js/tmpl.js"></script>
-<script src="js/fxtpl.beta.js"></script>
-<script src="js/bdtpl.js"></script>
-<script src="js/kissy.js"></script>
-<script src="js/template.js"></script>
-<script src="js/juicer.js"></script>
-<script src="js/mustache.js"></script>
-<title>官方helpers（变量调节器）插件汇总</title>
+<script src="js/fxtpl.js"></script>
+
+<title>Fxtpl</title>
 <style>
-body{ font: 14px/20px Microsoft YaHei, \5b8b\4f53, Arial, Verdana;}
-body *{ font-family: Arial, Verdana;}
-textarea{ width: 800px; height: 50px; padding: 10px; background: #f1f1f1; border-color: #ddd; font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal; line-height: 20px; color: #333;}
-h1{ font-size: 30px; text-align: center;}
-h4{ font-size: 20px; font-weight: bold; background: #f1f1f1; padding: 5px;}
-.b{font-weight: bold;}
-.main{ width: 1000px; margin: 0 auto;}
+body{ line-height: 1.5em;}
+textarea{ width: 800px; height: 20px; background: #f1f1f1; border-color: #ddd; font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal; line-height: 20px; color: #333; display: block; margin-bottom:10px; }
+
 </style>
 </head>
 
 <body>
-    <p>default：设置默认值，请用“||”代替，例如“$count||10”默认值为10</p>
-    <p>cut：设置默认值，请用“||”代替，例如“$count||10”默认值为10</p>
-    <script type="text/javascript">
-    Fxtpl.helpers.cut = function(str, limitLen){
-        var s = String(str).replace(/([^\x00-\xff])/g,'\f$1');
-        return limitLen >= s.length ? str : s.substr(0, limitLen-3).replace(/\f/g, '')+'...';
-      }
-    </script>
+<div id="myTemplate">
+    >> 使用trim辅助方法
+	<textarea><!--[$title|trim]--></textarea>
+
+	>> 使用intercept辅助方法，空格后使用参数（从方法的第二个参数开始），多个参数用“,”分隔
+	<textarea><!--[$title|intercept 30,'...']--></textarea>
+
+	>> 同时使用trim、intercept辅助方法
+	<textarea><!--[$title|trim|intercept 30,'...']--></textarea>
+</div>
+<script>
+//去除字符串前后空格
+Fxtpl.helpers.trim = function(value){
+    return value.replace(/^\s*|\s*$/g,'');
+};
+
+//根据length截取字符串，多出的用appendStr代替
+Fxtpl.helpers.intercept = function(value, length, appendStr){
+    var s = String(value).replace(/([^\x00-\xff])/g,'\f$1');
+    var appendLen = appendStr.length;
+    return length >= s.length ? value : s.substr(0, length-appendLen).replace(/\f/g, '')+appendStr;
+};
+/*Fxtpl.helpers.cut = function(str, limitLen){
+	var s = String(str).replace(/([^\x00-\xff])/g,'\f$1');
+	return limitLen >= s.length ? str : s.substr(0, limitLen-3).replace(/\f/g, '')+'...';
+}*/
+var data = {
+	title: '   明0:00直播比利时VS俄罗斯 首发:阿扎尔领衔     '
+};
+Fxtpl.render('myTemplate', data);
+</script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/fxtpl.js"></script>
+
+<title>Fxtpl</title>
+<style>
+body{ line-height: 1.5em;}
+</style>
+</head>
+
+<body>
+>> 数据共享渲染模式
+<div id="myTemplate_m1">
+    <!--[each $userList]-->
+	    <li>索引：<!--[$index]-->，名称：<!--[$item]--></li>
+	<!--[/each]-->
+</div>
+
+>> 闭包数据（不共享）模式
+<div id="myTemplate_m2">
+    <!--[each $userList]-->
+	    <li>索引：<!--[$index]-->，名称：<!--[$item]--></li>
+	<!--[/each]-->
+</div>
+
+<script>
+//数据共享渲染模式
+Fxtpl.data.userList = [
+	'Jack',
+	'Lily',
+	'Koen'
+];
+//省略data参数，渲染Fxtpl.data域下数据，同时外部可以通过Fxtpl.data直接访问此域数据（共享）
+Fxtpl.render('myTemplate_m1');
+
+//闭包数据（不共享）模式
+var data = {
+    userList: [
+    	'Jack_noShare',
+    	'Lily_noShare',
+    	'Koen_noShare'
+    ]
+};
+//传入data参数
+Fxtpl.render('myTemplate_m2', data);
+</script>
+</body>
+</html>
