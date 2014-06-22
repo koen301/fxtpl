@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/fxtpl.js"></script>
+
+<title>Fxtpl</title>
+<style>
+
+</style>
+</head>
+
+<body>
+<div id="myTemplate">
+    
+</div>
+
+<script>
+var title = '#音乐十年# 我在现场投票给了{{$starName}}，TA当前排名第{{$rank}}位共{{$votes}}票。';
+var data = {
+    starName: '邓紫棋',
+    rank: 1,
+    votes: 128790
+};
+title = Fxtpl.compile(title, data, {leftTag: '{{', rightTag: '}}'});
+
+document.getElementById('myTemplate').innerHTML = title;
+</script>
+</body>
+</html>
