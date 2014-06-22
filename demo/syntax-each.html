@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/fxtpl.js"></script>
+
+<title>Fxtpl</title>
+<style>
+body{ line-height: 1.5em;}
+</style>
+</head>
+
+<body>
+<div id="myTemplate">
+    >> each遍历，默认带两个参数：$index(索引)、$item(值)，同时内部this指针指向$item
+	<ul>
+	<!--[each $userList]-->
+	    <li>索引：<!--[$index]-->，名称：<!--[$item]--></li>
+	<!--[/each]-->
+	</ul>
+
+	>> each...as...遍历，自定义$index、$item参数，可省略“$”前缀（为保持模板变量一致性，不建议省略）
+	<ul>
+	<!--[each $userList as $name $i]-->
+	    <li>索引：<!--[$i]-->，名称：<!--[$name]--></li>
+	<!--[/each]-->
+	</ul>
+</div>
+
+<script>
+var data = {
+    userList: [
+    	'Jack',
+    	'Lily',
+    	'Koen'
+    ]
+};
+Fxtpl.render('myTemplate', data);
+</script>
+</body>
+</html>

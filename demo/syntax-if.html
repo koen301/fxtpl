@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/fxtpl.js"></script>
+
+<title>Fxtpl</title>
+<style>
+body{ line-height: 1.5em;}
+</style>
+</head>
+
+<body>
+<div id="myTemplate">
+    >> if
+	<!--[if $status == '1']-->
+	    <div>直播中...</div>
+	<!--[/if]-->
+
+	>> if...else
+	<!--[if $live == '1']-->
+	    <div>直播中...</div>
+	<!--[else]-->
+	    <div>休息中...</div>
+	<!--[/if]-->
+
+	>> if...elseif
+	<!--[if $live == '1']-->
+	    <div>直播中...</div>
+	<!--[elseif $live == '0']-->
+	    <div>录像中...</div>
+	<!--[/if]-->
+</div>
+
+<script>
+var data = {
+    status: 1,
+    live: 0
+};
+Fxtpl.render('myTemplate', data);
+</script>
+</body>
+</html>

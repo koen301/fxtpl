@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<script src="js/fxtpl.js"></script>
+
+<title>Fxtpl</title>
+<style>
+body{ line-height: 1.5em;}
+</style>
+</head>
+
+<body>
+<div id="myTemplate">
+    >> 直接输出模板变量
+	<div>歌手： <!--[$starName]--></div>
+
+	>> 输出变量的子项
+	<div>用户ID： <!--[$userInfo.userId]--></div>
+
+	>> 应用模板辅助方法（变量调节器）“escape”转义字符串
+	<div>您的留言： <!--[$notes|escape]--></div>
+
+	>> 应用JS原生“||”语法，设置“$votes”的默认值为“暂无”
+	<div>您的票数：<!--[$votes||'暂无']--></div>
+
+	>> 应用JS原生字符串方法replace
+	<div>时间：<!--[$time.replace(/\//g, '-')]--></div>
+
+	>> 应用JS三元运算，输出“成功”或“失败”
+	<div>晋级：<!--[$status == 1? '成功': '失败']--></div>
+
+	>> 应用外部jQuery的$.trim方法
+	<div>评论：<!--[$.trim($comment)]--></div>
+</div>
+
+<script>
+var data = {
+    starName: '邓紫棋',
+    userInfo: {
+    	userId: 134536
+    },
+    notes: '<b>加油</b>↖(^ω^)↗',
+    votes: 0,
+    time: '2014/06/22',
+    status: 1,
+    comment: '     太精彩啦！     '
+};
+Fxtpl.render('myTemplate', data);
+</script>
+</body>
+</html>
