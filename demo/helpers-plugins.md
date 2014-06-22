@@ -13,7 +13,7 @@ JS:
 	 * @param str 字符串
 	 * @param limitLen 限制的长度(长度以英文为准)
 	 * @return String
-	 * @author koen301
+	 * @author koen
 	 */
 	Fxtpl.helpers.cut = function(str, limitLen){
 		var s = String(str).replace(/([^\x00-\xff])/g,'\f$1');
