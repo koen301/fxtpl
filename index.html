@@ -32,44 +32,482 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="%E7%B9%81%E6%98%9F%E5%89%8D%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E-fxtpl" class="anchor" href="#%E7%B9%81%E6%98%9F%E5%89%8D%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E-fxtpl"><span class="octicon octicon-link"></span></a>繁星前端模板引擎 Fxtpl</h1>
+<a name="fxtpl-v10-%E7%B9%81%E6%98%9F%E5%89%8D%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E" class="anchor" href="#fxtpl-v10-%E7%B9%81%E6%98%9F%E5%89%8D%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="octicon octicon-link"></span></a>Fxtpl v1.0 繁星前端模板引擎</h1>
 
 <p>极速，简洁，高效，轻量级，直接在html中嵌入模板</p>
 
 <h3>
-<a name="fxtpl%E7%9A%84%E7%89%B9%E7%82%B9" class="anchor" href="#fxtpl%E7%9A%84%E7%89%B9%E7%82%B9"><span class="octicon octicon-link"></span></a>Fxtpl的特点</h3>
+<a name="%E7%89%B9%E7%82%B9" class="anchor" href="#%E7%89%B9%E7%82%B9"><span class="octicon octicon-link"></span></a>特点</h3>
 
-<p>Fxtpl可以直接在html中嵌入模板，无需编写script标签模板再innerHTML插入等繁琐操作。</p>
+<p>Fxtpl可以直接在html中嵌入模板，无需编写script标签模板再innerHTML插入等繁琐操作</p>
 
-<p>Fxtpl语法模仿Smarty，却比Smarty更简单优雅，更适合前端思维。</p>
+<p>Fxtpl语法模仿Smarty，却比Smarty更简单优雅，更适合前端思维</p>
 
-<p>Fxtpl有类似Smarty的单页面数据共享模式，也有前端模板特有的闭包数据渲染模式。</p>
+<p>Fxtpl有类似Smarty的单页面数据共享渲染模式，也有前端模板特有的闭包数据渲染模式</p>
 
-<p>Fxtpl有自己的模板变量域名空间（类似PHP中的美元变量），无需依靠沙箱，模板环境和外部JS环境可以安全互访，自由度和灵活性空前（市面流行的前端模板一般是沙箱牢房模式，应用灵活性大打折扣）。</p>
-
-<h3>
-<a name="fxtpl%E7%9A%84%E6%80%A7%E8%83%BD" class="anchor" href="#fxtpl%E7%9A%84%E6%80%A7%E8%83%BD"><span class="octicon octicon-link"></span></a>Fxtpl的性能</h3>
-
-<p>站在 tmpl 与 artTemplate 的肩膀上，Fxtpl 的性能更加优越。</p>
-
-<p>Fxtpl 在 Chrome 中的综合速度是 Mustache 的30多倍，在 IE8 中是 Mustache 的40多倍。</p>
-
-<p>性能对比测试&gt;&gt;</p>
+<p>Fxtpl有自己的模板变量域名空间（类似PHP中的美元变量），无需依靠沙箱，模板环境和外部JS环境可以安全互访，模板的自由度和灵活性大大提升（市面流行的前端模板一般是沙箱牢房模式，应用灵活性大打折扣）</p>
 
 <h3>
-<a name="fxtpl%E7%9A%84%E4%BD%93%E7%A7%AF" class="anchor" href="#fxtpl%E7%9A%84%E4%BD%93%E7%A7%AF"><span class="octicon octicon-link"></span></a>Fxtpl的体积</h3>
+<a name="%E6%80%A7%E8%83%BD" class="anchor" href="#%E6%80%A7%E8%83%BD"><span class="octicon octicon-link"></span></a>性能</h3>
 
-<p>100多行代码，1.6KB（gzip），只有 Mustache 一半左右大小。</p>
+<p>Fxtpl的性能追求极致，无论在IE中还是Chrome等现代浏览器中，Fxtpl都表现优越</p>
+
+<p><a href="http://koen301.github.io/fxtpl/test/speed.html">详细性能对比测试&gt;&gt; </a></p>
 
 <h3>
-<a name="fxtpl%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD" class="anchor" href="#fxtpl%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="octicon octicon-link"></span></a>Fxtpl的基本功能</h3>
+<a name="%E4%BD%93%E7%A7%AF" class="anchor" href="#%E4%BD%93%E7%A7%AF"><span class="octicon octicon-link"></span></a>体积</h3>
 
-<p>渲染、编译、模板缓存、数据缓存、HTML转义、自定义分隔符、调试模式、变量调节器（helpers）、include语句等。</p>
+<p>Fxtpl在体积上也追求极致，一共100多行代码，1.6KB(gzip)</p>
+
+<p><a href="http://koen301.github.io/fxtpl/test/size.html">体积对比&gt;&gt; </a></p>
+
+<h3>
+<a name="%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="octicon octicon-link"></span></a>基本功能</h3>
+
+<p>渲染、编译、模板缓存、数据缓存、HTML转义、自定义分隔符、调试模式、变量调节器（helpers）、include语句等</p>
 
 <h3>
 <a name="%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81" class="anchor" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81"><span class="octicon octicon-link"></span></a>浏览器支持</h3>
 
-<p>IE6+/Chrome/Firefox等现代浏览器</p>
+<p>IE6+ / Chrome / Firefox 等现代浏览器</p>
+
+<h3>
+<a name="%E4%B8%8B%E8%BD%BD" class="anchor" href="#%E4%B8%8B%E8%BD%BD"><span class="octicon octicon-link"></span></a>下载</h3>
+
+<ul>
+<li><a href="https://raw.github.com/koen301/fxtpl/master/fxtpl.min.js">fxtpl.min.js (压缩)</a></li>
+<li><a href="https://raw.github.com/koen301/fxtpl/master/fxtpl.js">fxtpl.js (无压缩)</a></li>
+<li><a href="https://raw.github.com/koen301/fxtpl/master/fxtpl.plus.js">fxtpl.plus.js (Plus版本，额外支持Ajax加载/渲染外部文件)</a></li>
+</ul><h2>
+<a name="fxtpl-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B" class="anchor" href="#fxtpl-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="octicon octicon-link"></span></a>Fxtpl 快速上手</h2>
+
+<h3>
+<a name="%E6%B8%B2%E6%9F%93html" class="anchor" href="#%E6%B8%B2%E6%9F%93html"><span class="octicon octicon-link"></span></a>渲染HTML</h3>
+
+<h4>
+<a name="html" class="anchor" href="#html"><span class="octicon octicon-link"></span></a>html:</h4>
+
+<pre><code>&lt;div id="myTemplate"&gt;
+    &lt;p&gt;Hello, &lt;!--[$name]--&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h4>
+<a name="js" class="anchor" href="#js"><span class="octicon octicon-link"></span></a>js:</h4>
+
+<pre><code>var data = {
+    name: 'Fxtpl前端模板引擎'
+};
+Fxtpl.render('myTemplate', data);
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/quickstart-html.html">查看演示&gt;&gt; </a></p>
+
+<h3>
+<a name="%E7%BC%96%E8%AF%91js%E5%AD%97%E7%AC%A6%E4%B8%B2" class="anchor" href="#%E7%BC%96%E8%AF%91js%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="octicon octicon-link"></span></a>编译JS字符串</h3>
+
+<h4>
+<a name="js-1" class="anchor" href="#js-1"><span class="octicon octicon-link"></span></a>js:</h4>
+
+<pre><code>var title = '#音乐十年# 我在现场投票给了{{$starName}}，TA当前排名第{{$rank}}位共{{$votes}}票。';
+var data = {
+    starName: '邓紫棋',
+    rank: 1,
+    votes: 128790
+};
+title = Fxtpl.compile(title, data, {leftTag: '{{', rightTag: '}}'});
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/quickstart-string.html">查看演示&gt;&gt; </a></p>
+
+<h2>
+<a name="fxtpl-%E8%AF%AD%E6%B3%95" class="anchor" href="#fxtpl-%E8%AF%AD%E6%B3%95"><span class="octicon octicon-link"></span></a>Fxtpl 语法</h2>
+
+<h3>
+<a name="1%E8%BE%93%E5%87%BA%E5%8F%98%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F" class="anchor" href="#1%E8%BE%93%E5%87%BA%E5%8F%98%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="octicon octicon-link"></span></a>1、输出变量/表达式</h3>
+
+<p>Fxtpl的变量和Smarty模板类似，模板域变量以<code>$</code>开头。同时，为了最大兼容浏览器的预渲染，默认左右分隔符为<code>&lt;--[</code>和<code>]--&gt;</code></p>
+
+<pre><code>&gt;&gt; 直接输出模板变量
+&lt;div&gt;歌手： &lt;!--[$starName]--&gt;&lt;/div&gt;
+
+&gt;&gt; 输出变量的子项
+&lt;div&gt;用户ID： &lt;!--[$userInfo.userId]--&gt;&lt;/div&gt;
+
+&gt;&gt; 应用模板辅助方法（变量调节器）“escape”转义字符串
+&lt;div&gt;您的留言： &lt;!--[$notes|escape]--&gt;&lt;/div&gt;
+
+&gt;&gt; 应用JS原生“||”语法，设置“$votes”的默认值为“暂无”
+&lt;div&gt;您的票数：&lt;!--[$votes||'暂无']--&gt;&lt;/div&gt;
+
+&gt;&gt; 应用JS原生字符串方法replace
+&lt;div&gt;时间：&lt;!--[$time.replace('/', '-')]--&gt;&lt;/div&gt;
+
+&gt;&gt; 应用JS三元运算，输出“成功”或“失败”
+&lt;div&gt;晋级：&lt;!--[$status == 1? '成功': '失败']--&gt;&lt;/div&gt;
+
+&gt;&gt; 应用外部jQuery的$.trim方法
+&lt;div&gt;评论：&lt;!--[$.trim($comment)]--&gt;&lt;/div&gt;
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/syntax-base.html">查看演示&gt;&gt; </a></p>
+
+<h3>
+<a name="2ififelseifelseif%E5%8F%AF%E5%A4%9A%E9%87%8D%E5%B5%8C%E5%A5%97" class="anchor" href="#2ififelseifelseif%E5%8F%AF%E5%A4%9A%E9%87%8D%E5%B5%8C%E5%A5%97"><span class="octicon octicon-link"></span></a>2、if、if...else、if...elseif...，可多重嵌套</h3>
+
+<pre><code>&gt;&gt; if
+&lt;!--[if $status == '1']--&gt;
+    &lt;div&gt;直播中...&lt;/div&gt;
+&lt;!--[/if]--&gt;
+
+&gt;&gt; if...else
+&lt;!--[if $status == '1']--&gt;
+    &lt;div&gt;直播中...&lt;/div&gt;
+&lt;!--[else]--&gt;
+    &lt;div&gt;休息中...&lt;/div&gt;
+&lt;!--[/if]--&gt;
+
+&gt;&gt; if...elseif
+&lt;!--[if $status == '1']--&gt;
+    &lt;div&gt;直播中...&lt;/div&gt;
+&lt;!--[elseif $status == '2']--&gt;
+    &lt;div&gt;录像中...&lt;/div&gt;
+&lt;!--[/if]--&gt;
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/syntax-if.html">查看演示&gt;&gt; </a></p>
+
+<h3>
+<a name="3eachindexeachasindex" class="anchor" href="#3eachindexeachasindex"><span class="octicon octicon-link"></span></a>3、each...[index]、each...as...[index]</h3>
+
+<pre><code>&gt;&gt; each遍历，默认带两个参数：$index(索引)、$item(值)，同时内部this指针指向$item
+&lt;ul&gt;
+&lt;!--[each $userList]--&gt;
+    &lt;li&gt;索引：&lt;!--[$index]--&gt;，名称：&lt;!--[$item]--&gt;&lt;/li&gt;
+&lt;!--[/each]--&gt;
+&lt;/ul&gt;
+
+&gt;&gt; each...as...遍历，自定义$index、$item参数，可省略“$”前缀（为保持模板变量一致性，不建议省略）
+&lt;ul&gt;
+&lt;!--[each $userList as $name $i]--&gt;
+    &lt;li&gt;索引：&lt;!--[$i]--&gt;，名称：&lt;!--[$name]--&gt;&lt;/li&gt;
+&lt;!--[/each]--&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/syntax-each.html">查看演示&gt;&gt; </a></p>
+
+<h3>
+<a name="4include-id-data%E5%BC%95%E5%85%A5%E5%AD%90%E6%A8%A1%E6%9D%BF" class="anchor" href="#4include-id-data%E5%BC%95%E5%85%A5%E5%AD%90%E6%A8%A1%E6%9D%BF"><span class="octicon octicon-link"></span></a>4、include id, [data]（引入子模板）</h3>
+
+<h4>
+<a name="%E5%BC%95%E5%85%A5%E5%90%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%AD%97%E6%A8%A1%E6%9D%BF" class="anchor" href="#%E5%BC%95%E5%85%A5%E5%90%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%AD%97%E6%A8%A1%E6%9D%BF"><span class="octicon octicon-link"></span></a>引入同页面的字模板</h4>
+
+<pre><code>&gt;&gt; 引入id为“msgContent”的子模板，并用data渲染（可省）
+&lt;div id="box"&gt;
+    &lt;p&gt;您好，收到新消息： &lt;/p&gt;
+    &lt;!--[include 'msgContent', data]--&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/syntax-include.html">查看演示&gt;&gt; </a></p>
+
+<h4>
+<a name="%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%AD%90%E6%A8%A1%E6%9D%BF%E5%90%8C%E6%AD%A5%E5%BC%95%E5%85%A5" class="anchor" href="#%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%AD%90%E6%A8%A1%E6%9D%BF%E5%90%8C%E6%AD%A5%E5%BC%95%E5%85%A5"><span class="octicon octicon-link"></span></a>引入外部页面的子模板（同步引入）</h4>
+
+<p>注：仅 fxtpl.plus.js 版本支持，且需依赖jQeruy或Zepto，内部用“$.ajax”实现</p>
+
+<pre><code>&gt;&gt; 引入外部子模板文件“msgContent.html”，并用data渲染（可省）
+&lt;div id="box"&gt;
+    &lt;p&gt;您好，收到新消息： &lt;/p&gt;
+    &lt;!--[include 'msgContent.html', data]--&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/syntax-includeAjax.html">查看演示&gt;&gt; </a></p>
+
+<p>同时，Plus版本的Fxtpl.render方法也支持渲染外部文件，这样可以实时加载外部的模板（例如根据用户点击后加载）</p>
+
+<pre><code>//渲染外部文件
+var html = Fxtpl.render('/static/msg/msgContent.html', data);
+//渲染后的html插入当前页面
+$('#box').html(html);
+</code></pre>
+
+<p>(注：更多功能欢迎在<a href="https://github.com/koen301/fxtpl/issues">Issues</a>提出建议)</p>
+
+<h2>
+<a name="fxtpl-api" class="anchor" href="#fxtpl-api"><span class="octicon octicon-link"></span></a>Fxtpl API</h2>
+
+<h3>
+<a name="1fxtplrenderid-data-options" class="anchor" href="#1fxtplrenderid-data-options"><span class="octicon octicon-link"></span></a>1、Fxtpl.render(id, [data], [options])</h3>
+
+<p>渲染模板</p>
+
+<table>
+<thead><tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>无</td>
+<td>模板的id，如果其为script标签，即传统前端模板渲染模式；如果为非script标签，即类Smarty直接渲染模式（<a href="http://koen301.github.io/fxtpl/demo/render-id.html">demo</a>）</td>
+</tr>
+<tr>
+<td>data</td>
+<td>JSON</td>
+<td>Fxtpl.data</td>
+<td>模板的数据，默认渲染Fxtpl.data域下的数据，即数据共享渲染模式；如果传入data即闭包数据（不共享）模式（<a href="http://koen301.github.io/fxtpl/demo/render-data.html">demo</a>）</td>
+</tr>
+<tr>
+<td>options</td>
+<td>JSON</td>
+<td>options</td>
+<td>渲染模板的额外设置，参见下面“options 设置”</td>
+</tr>
+</tbody>
+</table><p>options 设置（可选）</p>
+
+<table>
+<thead><tr>
+<th>字段</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>debug</td>
+<td>Boolean</td>
+<td><code>false</code></td>
+<td>是否开启debug模式，参见<a href="#%20Fxtpl%20%E5%AE%B9%E9%94%99%E5%92%8C%E8%B0%83%E8%AF%95">Fxtpl 容错和调试</a>
+</td>
+</tr>
+<tr>
+<td>escape</td>
+<td>Boolean</td>
+<td><code>false</code></td>
+<td>是否转义输出HTML字符</td>
+</tr>
+<tr>
+<td>leftTag</td>
+<td>String</td>
+<td><code>"&lt;--["</code></td>
+<td>左语法分隔符</td>
+</tr>
+<tr>
+<td>rightTag</td>
+<td>String</td>
+<td><code>"]--&gt;"</code></td>
+<td>右语法分隔符</td>
+</tr>
+</tbody>
+</table><p>Returns: HTML（渲染后的HTML字符串）</p>
+
+<p><strong><em>类Smarty渲染模式需要注意的事项：</em></strong>不同于后端，前端模板开始编译之前浏览器已经对html进行编译，这很难保证嵌套在html中的模板保持原样，或是我们想要的效果，因此，当我们应用类Smarty渲染模式时，需要注意以下几点：</p>
+
+<ul>
+<li>请使用注释类的左右分隔符，例如默认的<code>&lt;--[</code>和<code>]--&gt;</code>，或<code>&lt;--{</code>和<code>}--&gt;</code>等；</li>
+<li>为兼容低版本的IE，不要在标签的“style”属性中编写模板，例如<br><code>&lt;div style="height:&lt;--[$height]--&gt;px"&gt;&lt;/div&gt;</code><br>
+如果一定要这样写，请在“style”前加上<code>tpl:</code>标记，例如<br><code>&lt;div tpl:style="height:&lt;--[$height]--&gt;px"&gt;&lt;/div&gt;</code><br>
+又或者，使用传统的前端模板渲染模式，把模板写在script标签中；</li>
+<li>标签嵌套要完整，不要这样：<br><code>&lt;--[if $done]--&gt;&lt;b&gt;111&lt;--[else]--&gt;&lt;b&gt;222&lt;--[/if]--&gt;&lt;/b&gt;</code><br>
+应该改为：<br><code>&lt;--[if $done]--&gt;&lt;b&gt;111&lt;/b&gt;&lt;--[else]--&gt;&lt;b&gt;222&lt;/b&gt;&lt;--[/if]--&gt;</code>
+</li>
+</ul><p><strong><em>类Smarty渲染模式的一些优化建议</em></strong></p>
+
+<ul>
+<li>IMG标签前加<code>tpl:</code>标记：浏览器中的IMG标签会在模板渲染之前发出请求，如果请求的地址是模板变量，那么它就发出了一个无谓的请求，虽然不影响使用，但为了网页的性能，建议在IMG标签前加<code>tpl:</code>标记，例如<code>&lt;tpl:img src="&lt;!--[$icon]--&gt;" /&gt;</code>。<a href="http://koen301.github.io/fxtpl/demo/render-img.html">查看演示&gt;&gt; </a>；</li>
+<li>模板设置<code>visibility:hidden</code>的样式：为了渲染之前更好的显示（不至于显示渲染前的“乱码”），建议设置模板为hidden样式，Fxtpl.render方法最后总会把HTML模板设置为<code>visibility:visible</code>。<a href="http://koen301.github.io/fxtpl/demo/render-visibility.html">查看演示&gt;&gt; </a>
+</li>
+</ul><h3>
+<a name="2fxtplcompilestr-data-options" class="anchor" href="#2fxtplcompilestr-data-options"><span class="octicon octicon-link"></span></a>2、Fxtpl.compile(str, [data], [options])</h3>
+
+<p>编译字符串</p>
+
+<table>
+<thead><tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>str</td>
+<td>String</td>
+<td>无</td>
+<td>编译的字符串</td>
+</tr>
+<tr>
+<td>data</td>
+<td>JSON</td>
+<td>无</td>
+<td>编译字符串用到的数据，如果省略，则返回渲染函数，否则返回渲染后的字符串（<a href="http://koen301.github.io/fxtpl/demo/compile.html">demo</a>）</td>
+</tr>
+<tr>
+<td>options</td>
+<td>JSON</td>
+<td>options</td>
+<td>编译字符串的额外设置，同<code>Fxtpl.render</code>方法中的“options 设置”</td>
+</tr>
+</tbody>
+</table><p>Returns: Function | String（渲染函数或渲染后的字符串）   </p>
+
+<h3>
+<a name="3fxtplconfig" class="anchor" href="#3fxtplconfig"><span class="octicon octicon-link"></span></a>3、Fxtpl.config</h3>
+
+<p>模板的全局设置，包含下面的字段</p>
+
+<table>
+<thead><tr>
+<th>字段</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>escape</td>
+<td>Boolean</td>
+<td><code>false</code></td>
+<td>是否转义输出HTML字符</td>
+</tr>
+<tr>
+<td>leftTag</td>
+<td>String</td>
+<td><code>"&lt;--["</code></td>
+<td>左语法分隔符</td>
+</tr>
+<tr>
+<td>rightTag</td>
+<td>String</td>
+<td><code>"]--&gt;"</code></td>
+<td>右语法分隔符</td>
+</tr>
+</tbody>
+</table><p>除了无“debug”的全局设置，和上面方法中的“options 设置”基本相同，优先级为：方法中的“options 设置” &gt; 全局设置</p>
+
+<p>下面展示如何把模板的全局左右分隔符，改为<code>{{</code>和<code>}}</code>：</p>
+
+<pre><code>Fxtpl.config.leftTag = '{{';//定义新的左分隔符
+Fxtpl.config.rightTag = '}}';//定义新的右分隔符
+
+var data = {
+  name: "Joe"
+};
+var output = Fxtpl.compile("My name is {{$name}}", data);//直接使用新的格式
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/config-tag.html">查看演示&gt;&gt; </a></p>
+
+<h3>
+<a name="4fxtplhelpers" class="anchor" href="#4fxtplhelpers"><span class="octicon octicon-link"></span></a>4、Fxtpl.helpers</h3>
+
+<p>Fxtpl模板的辅助方法集合（变量调节器）</p>
+
+<p>Fxtpl.helpers是一个对象，你可以认为它是模板辅助方法的原型<code>prototype</code>，默认只有“escape”方法   </p>
+
+<pre><code>&lt;div&gt;您的留言：&lt;!--[$notes|escape]--&gt;&lt;/div&gt;
+</code></pre>
+
+<p>你可以通过类似扩展原型的方式，扩展模板的辅助方法</p>
+
+<p><strong><em>需要注意</em></strong></p>
+
+<ul>
+<li>方法的第一个参数为模板传递的值/字符串</li>
+<li>方法必须有返回值，否则模板输出为“undefined”</li>
+</ul><p>例如扩展一个trim方法和intercept方法</p>
+
+<pre><code>//去除字符串前后空格
+Fxtpl.helpers.trim = function(value){
+    return value.replace(/^\s*|\s*$/g,'');
+};
+
+//根据length截取字符串，多出的用appendStr代替
+Fxtpl.helpers.intercept = function(value, length, appendStr){
+    return someString;
+};
+</code></pre>
+
+<p>在模板中使用</p>
+
+<pre><code>&gt;&gt; 使用trim辅助方法
+&lt;!--[$title|trim]--&gt;
+
+&gt;&gt; 使用intercept辅助方法，空格后使用参数（从方法的第二个参数开始），多个参数用“,”分隔
+&lt;!--[$title|intercept 10,'...']--&gt;
+
+&gt;&gt; 同时使用trim、intercept辅助方法
+&lt;!--[$title|trim|intercept 10,'...']--&gt;
+</code></pre>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/helpers.html">查看演示&gt;&gt; </a></p>
+
+<p>附：<a href="http://koen301.github.io/fxtpl/demo/helpers-plugins.md">Fxtpl常用辅助方法插件汇总&gt;&gt; </a></p>
+
+<h3>
+<a name="5fxtpldata" class="anchor" href="#5fxtpldata"><span class="octicon octicon-link"></span></a>5、Fxtpl.data</h3>
+
+<p>模板数据默认存放的域，如果Fxtpl.render方法不传data参数，即从此域读取</p>
+
+<p>此域下所有一级变量在模板下均带“$”前缀，假如Fxtpl.data为</p>
+
+<pre><code>{
+    page: 102,
+    user: {
+        name: 'Jack'
+    }
+}
+</code></pre>
+
+<p>则在模板中对应为<code>$page</code>和<code>$user.name</code></p>
+
+<h3>
+<a name="6fxtplcache" class="anchor" href="#6fxtplcache"><span class="octicon octicon-link"></span></a>6、Fxtpl.cache</h3>
+
+<p>模板渲染函数缓存区，以模板id为索引</p>
+
+<p>只缓存Fxtpl.render生成的渲染函数，不缓存Fxtpl.compile生成的渲染函数</p>
+
+<p>下面演示手动缓存Fxtpl.compile生成的渲染函数</p>
+
+<pre><code>var renderFun = Fxtpl.compile('my name is {{$name}}');//用renderFun变量缓存渲染函数
+var data = {
+    list: [
+        {name: 'Jack'},
+        {name: 'Lily'},
+        {name: 'Koen'}
+    ]
+};
+for(var i = 0; i &lt; data.list.length; i++){
+    console.log(renderFun(data.list[i]));//打印渲染结果
+}
+
+//my name is Jack
+//my name is Lily
+//my name is Koen
+</code></pre>
+
+<h2>
+<a name="fxtpl-%E5%AE%B9%E9%94%99%E5%92%8C%E8%B0%83%E5%BC%8F" class="anchor" href="#fxtpl-%E5%AE%B9%E9%94%99%E5%92%8C%E8%B0%83%E5%BC%8F"><span class="octicon octicon-link"></span></a>Fxtpl 容错和调式</h2>
+
+<p>当模板渲染/编译发生错误时，Fxtpl会在控制台和页面同时输出错误信息和类型（Render或Compile），不影响后面代码的继续执行</p>
+
+<p>同时Fxtpl提供debug调试模式（在“options 设置”中打开），在控制台输出编译前的字符串/HTML和渲染函数，方便定位错误</p>
+
+<p><a href="http://koen301.github.io/fxtpl/demo/debug.html">查看演示&gt;&gt; </a></p>
+
+<h2>
+<a name="fxtpl-%E6%B3%A8%E9%87%8A" class="anchor" href="#fxtpl-%E6%B3%A8%E9%87%8A"><span class="octicon octicon-link"></span></a>Fxtpl 注释</h2>
+
+<p>Fxtpl只支持HTML默认的<code>&lt;!-- --&gt;</code>注释格式，不创造任何注释格式。</p>
       </section>
     </div>
 
