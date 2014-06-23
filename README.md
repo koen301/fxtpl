@@ -198,23 +198,7 @@ rightTag | String | ``"]-->"`` | 右语法分隔符
 
 Returns: HTML（渲染后的HTML字符串）
 
-***类Smarty渲染模式需要注意的事项：***不同于后端，前端模板开始编译之前浏览器已经对html进行编译，这很难保证嵌套在html中的模板保持原样，或是我们想要的效果，因此，当我们应用类Smarty渲染模式时，需要注意以下几点：
-
-* 请使用注释类的左右分隔符，例如默认的``<--[``和``]-->``，或``<--{``和``}-->``等；
-* 为兼容低版本的IE，不要在标签的“style”属性中编写模板，例如   
-``<div style="height:<--[$height]-->px"></div>``   
-如果一定要这样写，请在“style”前加上``tpl:``标记，例如   
-``<div tpl:style="height:<--[$height]-->px"></div>``   
-又或者，使用传统的前端模板渲染模式，把模板写在script标签中；
-* 标签嵌套要完整，不要这样：   
-``<--[if $done]--><b>111<--[else]--><b>222<--[/if]--></b>``   
-应该改为：   
-``<--[if $done]--><b>111</b><--[else]--><b>222</b><--[/if]-->``
-
-***类Smarty渲染模式的一些优化建议***
-
-* IMG标签前加``tpl:``标记：浏览器中的IMG标签会在模板渲染之前发出请求，如果请求的地址是模板变量，那么它就发出了一个无谓的请求，虽然不影响使用，但为了网页的性能，建议在IMG标签前加``tpl:``标记，例如``<tpl:img src="<!--[$icon]-->" />``。[查看演示>> ](http://koen301.github.io/fxtpl/demo/render-img.html)；
-* 模板设置``visibility:hidden``的样式：为了渲染之前更好的显示（不至于显示渲染前的“乱码”），建议设置模板为hidden样式，Fxtpl.render方法最后总会把HTML模板设置为``visibility:visible``。[查看演示>> ](http://koen301.github.io/fxtpl/demo/render-visibility.html)
+[类Smarty渲染模式需要注意的事项及建议>>](https://github.com/koen301/fxtpl/wiki/%E7%B1%BBSmarty%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E9%A1%B9%E5%8F%8A%E5%BB%BA%E8%AE%AE)
 
 ### 2、Fxtpl.compile(str, [data], [options])
 
