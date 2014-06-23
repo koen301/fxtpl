@@ -75,9 +75,9 @@
 <a name="%E4%B8%8B%E8%BD%BD" class="anchor" href="#%E4%B8%8B%E8%BD%BD"><span class="octicon octicon-link"></span></a>下载</h3>
 
 <ul>
-<li><a href="https://raw.github.com/koen301/fxtpl/master/fxtpl.min.js">fxtpl.min.js (压缩)</a></li>
-<li><a href="https://raw.github.com/koen301/fxtpl/master/fxtpl.js">fxtpl.js (无压缩)</a></li>
-<li><a href="https://raw.github.com/koen301/fxtpl/master/fxtpl.plus.js">fxtpl.plus.js (Plus版本，额外支持Ajax加载/渲染外部文件)</a></li>
+<li><a href="http://koen301.github.io/fxtpl/fxtpl.min.js">fxtpl.min.js (压缩)</a></li>
+<li><a href="http://koen301.github.io/fxtpl/fxtpl.js">fxtpl.js (无压缩)</a></li>
+<li><a href="http://koen301.github.io/fxtpl/fxtpl.plus.js">fxtpl.plus.js (Plus版本，额外支持Ajax加载/渲染外部文件)</a></li>
 </ul><h2>
 <a name="fxtpl-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B" class="anchor" href="#fxtpl-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="octicon octicon-link"></span></a>Fxtpl 快速上手</h2>
 
@@ -309,23 +309,9 @@ $('#box').html(html);
 </tbody>
 </table><p>Returns: HTML（渲染后的HTML字符串）</p>
 
-<p><strong><em>类Smarty渲染模式需要注意的事项：</em></strong>不同于后端，前端模板开始编译之前浏览器已经对html进行编译，这很难保证嵌套在html中的模板保持原样，或是我们想要的效果，因此，当我们应用类Smarty渲染模式时，需要注意以下几点：</p>
+<p><a href="https://github.com/koen301/fxtpl/wiki/%E7%B1%BBSmarty%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E9%A1%B9%E5%8F%8A%E5%BB%BA%E8%AE%AE">类Smarty渲染模式需要注意的事项及建议&gt;&gt;</a></p>
 
-<ul>
-<li>请使用注释类的左右分隔符，例如默认的<code>&lt;--[</code>和<code>]--&gt;</code>，或<code>&lt;--{</code>和<code>}--&gt;</code>等；</li>
-<li>为兼容低版本的IE，不要在标签的“style”属性中编写模板，例如<br><code>&lt;div style="height:&lt;--[$height]--&gt;px"&gt;&lt;/div&gt;</code><br>
-如果一定要这样写，请在“style”前加上<code>tpl:</code>标记，例如<br><code>&lt;div tpl:style="height:&lt;--[$height]--&gt;px"&gt;&lt;/div&gt;</code><br>
-又或者，使用传统的前端模板渲染模式，把模板写在script标签中；</li>
-<li>标签嵌套要完整，不要这样：<br><code>&lt;--[if $done]--&gt;&lt;b&gt;111&lt;--[else]--&gt;&lt;b&gt;222&lt;--[/if]--&gt;&lt;/b&gt;</code><br>
-应该改为：<br><code>&lt;--[if $done]--&gt;&lt;b&gt;111&lt;/b&gt;&lt;--[else]--&gt;&lt;b&gt;222&lt;/b&gt;&lt;--[/if]--&gt;</code>
-</li>
-</ul><p><strong><em>类Smarty渲染模式的一些优化建议</em></strong></p>
-
-<ul>
-<li>IMG标签前加<code>tpl:</code>标记：浏览器中的IMG标签会在模板渲染之前发出请求，如果请求的地址是模板变量，那么它就发出了一个无谓的请求，虽然不影响使用，但为了网页的性能，建议在IMG标签前加<code>tpl:</code>标记，例如<code>&lt;tpl:img src="&lt;!--[$icon]--&gt;" /&gt;</code>。<a href="http://koen301.github.io/fxtpl/demo/render-img.html">查看演示&gt;&gt; </a>；</li>
-<li>模板设置<code>visibility:hidden</code>的样式：为了渲染之前更好的显示（不至于显示渲染前的“乱码”），建议设置模板为hidden样式，Fxtpl.render方法最后总会把HTML模板设置为<code>visibility:visible</code>。<a href="http://koen301.github.io/fxtpl/demo/render-visibility.html">查看演示&gt;&gt; </a>
-</li>
-</ul><h3>
+<h3>
 <a name="2fxtplcompilestr-data-options" class="anchor" href="#2fxtplcompilestr-data-options"><span class="octicon octicon-link"></span></a>2、Fxtpl.compile(str, [data], [options])</h3>
 
 <p>编译字符串</p>
@@ -450,7 +436,7 @@ Fxtpl.helpers.intercept = function(value, length, appendStr){
 
 <p><a href="http://koen301.github.io/fxtpl/demo/helpers.html">查看演示&gt;&gt; </a></p>
 
-<p>附：<a href="http://koen301.github.io/fxtpl/demo/helpers-plugins.md">Fxtpl常用辅助方法插件汇总&gt;&gt; </a></p>
+<p>附：<a href="https://github.com/koen301/fxtpl/blob/gh-pages/demo/helpers-plugins.md">Fxtpl常用辅助方法插件汇总&gt;&gt; </a></p>
 
 <h3>
 <a name="5fxtpldata" class="anchor" href="#5fxtpldata"><span class="octicon octicon-link"></span></a>5、Fxtpl.data</h3>
