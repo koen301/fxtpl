@@ -17,13 +17,13 @@ Fxtpl有自己的模板变量域名空间（类似PHP中的美元变量），无
 
 Fxtpl的性能追求极致，无论在IE中还是Chrome等现代浏览器中，Fxtpl都表现优越
 
-[详细性能对比测试>> ](http://koen301.github.io/fxtpl/test/speed.html)
+[详细性能对比测试>> ](http://koen301.github.io/fxtpl/demo/test-speed.html)
 
 ### 体积
 
 Fxtpl在体积上也追求极致，一共100多行代码，1.6KB(gzip)
 
-[体积对比>> ](http://koen301.github.io/fxtpl/test/size.html)
+[体积对比>> ](http://koen301.github.io/fxtpl/demo/test-size.html)
 
 ### 基本功能
 
@@ -35,9 +35,9 @@ IE6+ / Chrome / Firefox 等现代浏览器
 
 ### 下载
 
-* [fxtpl.min.js (压缩)](http://koen301.github.io/fxtpl/fxtpl.min.js)
-* [fxtpl.js (无压缩)](http://koen301.github.io/fxtpl/fxtpl.js)
-* [fxtpl.plus.js (Plus版本，额外支持Ajax加载/渲染外部文件)](http://koen301.github.io/fxtpl/fxtpl.plus.js)
+* [fxtpl.min.js (压缩)](http://koen301.github.io/fxtpl/dist/fxtpl.min.js)
+* [fxtpl.js (无压缩)](http://koen301.github.io/fxtpl/dist/fxtpl.js)
+* [fxtpl.plus.js (Plus版本，额外支持Ajax加载/渲染外部文件)](http://koen301.github.io/fxtpl/dist/fxtpl.plus.js)
 
 ## Fxtpl 快速上手
 
