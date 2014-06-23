@@ -35,9 +35,9 @@ IE6+ / Chrome / Firefox 等现代浏览器
 
 ### 下载
 
-* [fxtpl.min.js (压缩)](https://raw.github.com/koen301/fxtpl/master/fxtpl.min.js)
-* [fxtpl.js (无压缩)](https://raw.github.com/koen301/fxtpl/master/fxtpl.js)
-* [fxtpl.plus.js (Plus版本，额外支持Ajax加载/渲染外部文件)](https://raw.github.com/koen301/fxtpl/master/fxtpl.plus.js)
+* [fxtpl.min.js (压缩)](http://koen301.github.io/fxtpl/fxtpl.min.js)
+* [fxtpl.js (无压缩)](http://koen301.github.io/fxtpl/fxtpl.js)
+* [fxtpl.plus.js (Plus版本，额外支持Ajax加载/渲染外部文件)](http://koen301.github.io/fxtpl/fxtpl.plus.js)
 
 ## Fxtpl 快速上手
 
