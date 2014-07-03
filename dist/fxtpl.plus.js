@@ -72,7 +72,10 @@
           return c + d.replace(/('|\\)/g, '\\$1');
         })
         .replace(/(\t)(.*?)(\r)/g, function(a,b,c){//code处理
-          return _this.parsing(c.replace(/&amp;/g,'&'), varString, rep, escape);
+          return _this.parsing(c
+            .replace(/&amp;/g,'&')
+            .replace(/&lt;/g,'<')
+            .replace(/&gt;/g,'>'), varString, rep, escape);
         }) +
         rep[2] + rep[5];
       fnBody = varString.join('') + fnBody;

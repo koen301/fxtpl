@@ -4,9 +4,9 @@
  *
  * Copyright 2014, fanxing.com
  * Released under the MIT license
- * Version: 1.0.0
+ * Version: 1.0.1
  * 
- * Date: 2014-06-10
+ * Date: 2014-07-03
  */
 ;(function(){
   //Fxtpl命名空间
@@ -61,7 +61,10 @@
           return c + d.replace(/('|\\)/g, '\\$1');
         })
         .replace(/(\t)(.*?)(\r)/g, function(a,b,c){//code处理
-          return _this.parsing(c.replace(/&amp;/g,'&'), varString, rep, escape);
+          return _this.parsing(c
+            .replace(/&amp;/g,'&')
+            .replace(/&lt;/g,'<')
+            .replace(/&gt;/g,'>'), varString, rep, escape);
         }) +
         rep[2] + rep[5];
       fnBody = varString.join('') + fnBody;
