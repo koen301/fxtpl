@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="js/fxtpl.js"></script>
+<script src="../dist/fxtpl.min.js"></script>
 
 <title>Fxtpl</title>
 <style>
@@ -13,12 +13,26 @@
 <body>
 <div id="myTemplate">
     <p>Hello, <!--[$name]--></p>
+    <ul>
+      <!--[each $list as $data]-->
+      <li><!--[$data]--></li>
+      <!--[/each]-->
+    </ul>
 </div>
 
 <script>
+//模板数据
 var data = {
-    name: 'Fxtpl前端模板引擎'
+  name: 'Fxtpl模板引擎',
+  list: [
+  	"目录1",
+    "目录2",
+    "目录3",
+    "目录4",
+    "目录5"
+  ]
 };
+//渲染模板
 Fxtpl.render('myTemplate', data);
 </script>
 </body>

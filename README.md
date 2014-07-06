@@ -5,7 +5,7 @@ Fxtpl v1.0 繁星前端模板引擎
 
 ### 特点
 
-Fxtpl可以直接在html中嵌入模板，无需编写script标签模板再innerHTML插入等繁琐操作
+Fxtpl可以直接在html中嵌入模板，无需编写script等特殊标签
 
 Fxtpl语法模仿Smarty，却比Smarty更简单优雅，更适合前端思维
 
@@ -47,13 +47,27 @@ IE6+ / Chrome / Firefox 等现代浏览器
 
 	<div id="myTemplate">
 		<p>Hello, <!--[$name]--></p>
+		<ul>
+	      <!--[each $list as $data]-->
+	      <li><!--[$data]--></li>
+	      <!--[/each]-->
+	    </ul>
 	</div>
 
 #### js:
 
+	//模板数据
 	var data = {
-		name: 'Fxtpl前端模板引擎'
+	  name: 'Fxtpl模板引擎',
+	  list: [
+	  	"目录1",
+	    "目录2",
+	    "目录3",
+	    "目录4",
+	    "目录5"
+	  ]
 	};
+	//渲染模板
 	Fxtpl.render('myTemplate', data);
 
 [查看演示>> ](http://koen301.github.io/fxtpl/demo/quickstart-html.html)
@@ -328,3 +342,9 @@ Fxtpl.helpers是一个对象，你可以认为它是模板辅助方法的原型`
 ## Fxtpl 注释
 
 Fxtpl只支持HTML默认的``<!-- -->``注释格式，不创造任何注释格式。
+
+## Fxtpl 升级日志
+
+### v1.0.1
+
+* 修复某些浏览器（猎豹）在类Smarty渲染模式中“<”（小于）、“>”（大于）等语法可能被转义的bug

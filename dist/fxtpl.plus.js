@@ -5,9 +5,9 @@
  *
  * Copyright 2014, fanxing.com
  * Released under the MIT license
- * Version: 1.0.0
+ * Version: 1.0.1
  * 
- * Date: 2014-06-22
+ * Date: 2014-07-06
  */
 ;(function(){
   //Fxtpl命名空间
@@ -56,7 +56,8 @@
       var _this = this;
       var _left = o.leftTag || this.config.leftTag;
       var _right = o.rightTag || this.config.rightTag;
-      if(/</.test(_left)){
+      var isSmartyMode = /<!--/.test(_left);//是否类Smarty渲染模式（直接渲染模式）
+      if(isSmartyMode){
         var _l = _left.replace('<','&lt;');
         var _r = _right.replace('>','&gt;');
         str = str.split(_l).join(_left).split(_r).join(_right);
@@ -72,10 +73,13 @@
           return c + d.replace(/('|\\)/g, '\\$1');
         })
         .replace(/(\t)(.*?)(\r)/g, function(a,b,c){//code处理
-          return _this.parsing(c
-            .replace(/&amp;/g,'&')
+          if(isSmartyMode){
+            //类Smarty渲染模式需要的代码转义
+            c = c.replace(/&amp;/g,'&')
             .replace(/&lt;/g,'<')
-            .replace(/&gt;/g,'>'), varString, rep, escape);
+            .replace(/&gt;/g,'>');
+          }
+          return _this.parsing(c, varString, rep, escape);
         }) +
         rep[2] + rep[5];
       fnBody = varString.join('') + fnBody;
