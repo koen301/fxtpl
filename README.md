@@ -15,7 +15,7 @@ Fxtpl有自己的模板变量域名空间（类似PHP中的美元变量），无
 
 ### 性能
 
-Fxtpl的性能追求极致，无论在IE中还是Chrome等现代浏览器中，Fxtpl都表现优越
+Fxtpl的性能追求极致，无论在 IE 还是 Chrome 等现代浏览器中
 
 [详细性能对比测试>> ](http://koen301.github.io/fxtpl/demo/test-speed.html)
 
@@ -205,7 +205,7 @@ options 设置（可选）
 
 字段 | 类型 | 默认值| 说明
 ------------ | ------------- | ------------ | ------------
-debug | Boolean | ``false`` | 是否开启debug模式，参见[Fxtpl 容错和调试](# Fxtpl 容错和调试)
+debug | Boolean | ``false`` | 是否开启debug模式，参见[Fxtpl 容错和调试](#fxtpl-%E5%AE%B9%E9%94%99%E5%92%8C%E8%B0%83%E5%BC%8F)
 escape | Boolean | ``false`` | 是否转义输出HTML字符
 leftTag | String | ``"<--["`` | 左语法分隔符
 rightTag | String | ``"]-->"`` | 右语法分隔符
@@ -343,7 +343,7 @@ Fxtpl.helpers是一个对象，你可以认为它是模板辅助方法的原型`
 
 Fxtpl只支持HTML默认的``<!-- -->``注释格式，不创造任何注释格式。
 
-## Fxtpl 升级日志
+## 升级日志
 
 ### v1.0.1
 
