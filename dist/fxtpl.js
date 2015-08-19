@@ -29,7 +29,11 @@
           html = html.replace(/<[^>]+>/g, function(a){
             return a.replace(/\btpl:/ig,'');//替换tpl虚构标签
           });
-          elm.innerHTML = html;//TODO: 兼容IE某些tag不能innerHTML的情况
+          try{
+            elm.innerHTML = html;
+          }catch(e){// IE6-IE9中某些标签的innerHTML只读而不能设值，如table、tbody、tr等，直接使用jQuery的html方法
+            window.$ && $(elm).html(html);
+          }
           elm.style.visibility = 'visible';
         }
         return html;
