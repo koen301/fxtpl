@@ -351,4 +351,4 @@ Fxtpl只支持HTML默认的``<!-- -->``注释格式，不创造任何注释格�
 
 ### v1.0.2
 
-* 兼容IE6-IE9中某些标签的innerHTML只读而不能设值，如table、tbody、tr等，直接使用jQuery的html方法
+* 在类Smarty直接渲染模式中，兼容IE6-IE9中某些标签的innerHTML只读而不能设值，如table、tbody、tr等，直接使用jQuery的html方法
