@@ -4,7 +4,7 @@
  *
  * Copyright 2014, fanxing.com
  * Released under the MIT license
- * Version: 1.0.1
+ * Version: 1.0.2
  * 
  * Date: 2014-07-03
  */
